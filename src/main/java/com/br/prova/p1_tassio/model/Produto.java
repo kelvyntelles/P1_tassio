@@ -9,6 +9,7 @@ import java.util.Objects;
 public class Produto {
 
     private Categoria categoria;
+    private PromocaoItem promocaoItem;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -56,6 +57,14 @@ public class Produto {
 
     public void setValor(Float valor) {
         this.valor = valor;
+    }
+
+    public PromocaoItem getPromocaoItem() {
+        return promocaoItem;
+    }
+
+    public void setPromocaoItem(PromocaoItem promocaoItem) {
+        this.promocaoItem = promocaoItem;
     }
 
     @Override
