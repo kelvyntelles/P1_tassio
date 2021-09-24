@@ -16,6 +16,10 @@ public class Produto {
 
     @Column(nullable = false)
     private String nome;
+
+    @Column(nullable = false)
+    private Float valor;
+
     private Object Categoria;
 
     public Long getId() {
@@ -44,6 +48,14 @@ public class Produto {
 
     public String getCategoriaProduto() {
         return this.categoria.getNome();
+    }
+
+    public Float getValor() {
+        return valor;
+    }
+
+    public void setValor(Float valor) {
+        this.valor = valor;
     }
 
     @Override
