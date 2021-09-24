@@ -1,14 +1,12 @@
 package com.br.prova.p1_tassio.model;
 
-import lombok.Data;
-
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import java.util.Objects;
-@Data
-@Entity
-public class Produto {
 
-    private Categoria categoria;
+public class Categoria {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -16,7 +14,6 @@ public class Produto {
 
     @Column(nullable = false)
     private String nome;
-    private Object Categoria;
 
     public Long getId() {
         return id;
@@ -34,24 +31,20 @@ public class Produto {
         this.nome = nome;
     }
 
-    public Categoria getCategoria() {
-        return categoria;
-    }
-
-    public void setCategoria(Categoria categoria) {
-        this.categoria = categoria;
-    }
-
-    public String getCategoriaProduto() {
-        return this.categoria.getNome();
+    @Override
+    public String toString() {
+        return "Categoria{" +
+                "id=" + id +
+                ", nome='" + nome + '\'' +
+                '}';
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Produto produto = (Produto) o;
-        return Objects.equals(id, produto.id) && Objects.equals(nome, produto.nome);
+        Categoria categoria = (Categoria) o;
+        return Objects.equals(id, categoria.id) && Objects.equals(nome, categoria.nome);
     }
 
     @Override
