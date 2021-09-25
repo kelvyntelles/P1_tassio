@@ -67,6 +67,10 @@ public class Produto {
         this.promocaoItem = promocaoItem;
     }
 
+    public String getDadosProduto() {
+        return this.nome + this.categoria.getNome() + this.promocaoItem.getValorPromocao();
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
